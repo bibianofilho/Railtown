@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace Railtown.Interview.Api
             services.AddControllers();
 
             services.AddSingleton<IUserService, UserService>();
+            services.AddMvc().AddFluentValidation(o => o.ImplicitlyValidateChildProperties = true);
 
             services.AddHttpClient<IUsersApiClient, UsersApiClient>(
                 client =>
