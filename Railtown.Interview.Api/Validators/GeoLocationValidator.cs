@@ -11,7 +11,5 @@ namespace Railtown.Interview.Api.Validators
             RuleFor(i => i.Lat).InclusiveBetween(-90, 90);
             RuleFor(i => i.Lng).InclusiveBetween(-180,180);
         }
-
-        private bool BeGreaterThanZero(decimal value) => value > 0;
     }
 }

@@ -29,9 +29,9 @@ namespace Railtown.Interview.Api
             services.AddHttpClient<IUsersApiClient, UsersApiClient>(
                 client =>
                 {
-                    var taxesOptions = new UsersServerOptions();
-                    Configuration.GetSection("UsersService").Bind(taxesOptions);
-                    client.BaseAddress = taxesOptions.Url;
+                    var usersServerOptions = new UsersServerOptions();
+                    Configuration.GetSection("UsersService").Bind(usersServerOptions);
+                    client.BaseAddress = usersServerOptions.Url;
                 });
         }
 
